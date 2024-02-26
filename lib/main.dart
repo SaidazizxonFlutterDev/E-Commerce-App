@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
           ),
           onGenerateRoute: (settings) => MyRoutes.ongenerateRoute(settings),
-          initialRoute: '/home_page',
+          initialRoute: '/bottomnav',
         );
       },
     );
