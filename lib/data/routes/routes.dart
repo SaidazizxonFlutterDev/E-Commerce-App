@@ -2,6 +2,7 @@
 import 'package:ecommerce_app/presentation/screens/bottomnavbar/navigation_bar.dart';
 import 'package:ecommerce_app/presentation/screens/favorites/favorites_page.dart';
 import 'package:ecommerce_app/presentation/screens/home/home_page.dart';
+import 'package:ecommerce_app/presentation/screens/home/homedetail/home_detail_page.dart';
 import 'package:ecommerce_app/presentation/screens/search/search_page.dart';
 import 'package:ecommerce_app/presentation/screens/settings/settings_page.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,8 @@ class MyRoutes {
         return MaterialPageRoute(builder: (context) => const FavoritesPage());
       case 'settings_page':
         return MaterialPageRoute(builder: (context) => const SettingsPage());
+      case 'homedetail':
+        return MaterialPageRoute(builder: (context) => const HomeDetailPage());
       default:
     }
     return null;

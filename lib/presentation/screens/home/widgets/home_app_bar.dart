@@ -13,17 +13,11 @@ class HomeAppBar {
             "Mega Mall",
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: ColorConst.primayBlue,
+                color: ColorConst.primaryBlue,
                 fontSize: 18.sp,
                 fontWeight: FontWeight.bold),
           ),
         ),
-        actions: [
-          SvgPicture.asset(IconAsset.bell),
-          SizedBox(width: 18.w),
-          SvgPicture.asset(IconAsset.shopping_cart),
-          SizedBox(width: 18.w),
-        ],
       );
   }
 }
