@@ -1,4 +1,7 @@
+import 'dart:core';
+
 import 'package:ecommerce_app/presentation/core/constants/color_const.dart';
+import 'package:ecommerce_app/presentation/core/resources/resources.dart';
 import 'package:ecommerce_app/presentation/screens/settings/widgets/setting_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +14,8 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -49,19 +54,20 @@ class _SettingsPageState extends State<SettingsPage> {
                     TextStyle(fontSize: 16.sp, color: ColorConst.primaryBlack),
               ),
             ),
-            InkWell(
-                onTap: () {},
-                child: SettingsButton(icon: Icons.edit, text: "Edit Profile")),
-            InkWell(
-                onTap: () {},
-                child: SettingsButton(icon: Icons.history, text: "Orders")),
-            InkWell(
-                onTap: () {},
-                child: SettingsButton(
-                    icon: Icons.location_on, text: "Delivery Address")),
-            InkWell(
-                onTap: () {},
-                child: SettingsButton(icon: Icons.chat, text: "Help")),
+            
+            SizedBox(
+              height: 220.h,
+              child: ListView.builder(
+                itemCount: SettingsResources.labels.length,
+                shrinkWrap: false,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                return InkWell(
+                    onTap: () => Navigator.pushNamed(context, SettingsResources.routeNames[index]),
+                    child:
+                        SettingsButton(icon: SettingsResources.icons[index], text: SettingsResources.labels[index]));
+              }),
+            ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 10.w),
               height: 45.h,

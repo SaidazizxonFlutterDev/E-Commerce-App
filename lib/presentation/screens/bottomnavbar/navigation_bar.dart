@@ -4,7 +4,6 @@ import 'package:ecommerce_app/presentation/screens/errors/errors_page.dart';
 import 'package:ecommerce_app/presentation/screens/favorites/favorites_page.dart';
 import 'package:ecommerce_app/presentation/screens/home/home_page.dart';
 import 'package:ecommerce_app/presentation/screens/home/widgets/home_app_bar.dart';
-import 'package:ecommerce_app/presentation/screens/search/search_page.dart';
 import 'package:ecommerce_app/presentation/screens/settings/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,19 +18,24 @@ class BottomNavPage extends StatefulWidget {
 
 class _BottomNavPageState extends State<BottomNavPage> {
   int bottomNavIndex = 0;
-  List pages = [];
+  List<String> actionTexts = [
+    "Home",
+    "Shopping bag",
+    "Favorites",
+    "Settings"
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HomeAppBar.appBar(),
+      appBar: HomeAppBar.appBar(actionText: actionTexts[bottomNavIndex]),
       body: bottomNavIndex == 0
           ? const HomePage()
           : bottomNavIndex == 1
-              ? const SearchPage()
+              ? const CartPage()
               : bottomNavIndex == 2
-                  ? const CartPage()
+                  ? const FavoritesPage()
                   : bottomNavIndex == 3
-                      ? const FavoritesPage() : bottomNavIndex == 4 ? const SettingsPage()
+                      ? const SettingsPage()
                       : const ErrorsPage(),
       bottomNavigationBar: SnakeNavigationBar.color(
         behaviour: SnakeBarBehaviour.pinned,
@@ -40,18 +44,18 @@ class _BottomNavPageState extends State<BottomNavPage> {
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
         padding: EdgeInsets.all(5.w),
         snakeViewColor: ColorConst.primaryBlue,
-        selectedItemColor:
-            SnakeShape.circle == SnakeShape.indicator ? ColorConst.primaryBlue : null,
+        selectedItemColor: SnakeShape.circle == SnakeShape.indicator
+            ? ColorConst.primaryBlue
+            : null,
         unselectedItemColor: ColorConst.primaryBlue,
         showUnselectedLabels: false,
         showSelectedLabels: false,
-
         currentIndex: bottomNavIndex,
         onTap: (index) => setState(() => bottomNavIndex = index),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'cart'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart), label: 'cart'),
           BottomNavigationBarItem(
               icon: Icon(Icons.favorite), label: 'favorites'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'settings')

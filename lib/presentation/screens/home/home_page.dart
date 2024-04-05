@@ -1,5 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:ecommerce_app/presentation/core/constants/color_const.dart';
+import 'package:ecommerce_app/presentation/widgets/search_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,34 +29,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-                  height: 50.h,
-                  width: 325.w,
-                  decoration: BoxDecoration(
-                      color: ColorConst.secOffGrey,
-                      borderRadius: BorderRadius.circular(10.r)),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Search Product Name',
-                        style: TextStyle(
-                          color: ColorConst.secHalfGrey,
-                          fontSize: 14.sp,
-                          fontFamily: 'DM Sans',
-                          fontWeight: FontWeight.w500,
-                          height: 0.09.h,
-                        ),
-                      ),
-                      const Icon(Icons.search,
-                          color: ColorConst.primaryBlack),
-                    ],
-                  ),
-                ),
+                InkWell(onTap: ()=> Navigator.pushNamed(context, '/search_page'),child: const SearchBarWidget()),
                 SizedBox(height: 10.h),
                 SizedBox(
                   height: 150.h,
@@ -158,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, 'homedetail');
+                            Navigator.pushNamed(context, '/homedetail');
                           },
                           child: Card(
                             color: ColorConst.primaryBlue,

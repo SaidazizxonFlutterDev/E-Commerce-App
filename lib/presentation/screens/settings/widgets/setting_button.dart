@@ -38,6 +38,6 @@ class SettingsButton extends StatelessWidget {
         ],
       ),
     );
-    ;
+    
   }
 }

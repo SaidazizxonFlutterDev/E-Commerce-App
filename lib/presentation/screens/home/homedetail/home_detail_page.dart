@@ -1,4 +1,6 @@
 import 'package:ecommerce_app/presentation/core/constants/color_const.dart';
+import 'package:ecommerce_app/presentation/widgets/buy_button_widget.dart';
+import 'package:ecommerce_app/presentation/widgets/product_counter_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -88,35 +90,8 @@ class _HomeDetailPageState extends State<HomeDetailPage> {
                       style: TextStyle(
                           fontSize: 20.sp, color: ColorConst.primaryBlack),
                     ),
-                    Row(
-                      children: [
-                        OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            padding: EdgeInsets.all(0.h),
-                            side:
-                                const BorderSide(color: ColorConst.primaryBlue),
-                          ),
-                          onPressed: () {},
-                          child: const Icon(Icons.remove),
-                        ),
-                        SizedBox(width: 10.w),
-                        Text("1",
-                            style: TextStyle(
-                                color: ColorConst.primaryBlue,
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.bold)),
-                        SizedBox(width: 10.w),
-                        OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            padding: EdgeInsets.all(0.h),
-                            side:
-                                const BorderSide(color: ColorConst.primaryBlue),
-                          ),
-                          onPressed: () {},
-                          child: const Icon(Icons.add),
-                        ),
-                      ],
-                    ),
+                    ProductCounterWidget(
+                        removePressed: () {}, addPressed: () {}),
                   ],
                 ),
                 SizedBox(height: 8.h),
@@ -129,26 +104,9 @@ class _HomeDetailPageState extends State<HomeDetailPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 10.h),
-                      height: 40.h,
-                      width: 200.w,
-                      decoration: BoxDecoration(
-                          color: ColorConst.primaryBlue,
-                          borderRadius: BorderRadius.circular(8.r)),
-                      child: Center(
-                        child: Text(
-                          "Buy Now",
-                          style: TextStyle(
-                            letterSpacing: 2,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24.sp,
-                              color: ColorConst.primaryWhite),
-                        ),
-                      ),
-                    ),
+                    BuyButtonWidget(text: "Buy Now"),
                     IconButton(
-                      onPressed: (){},
+                      onPressed: () {},
                       icon: Icon(
                         Icons.shopping_cart_outlined,
                         size: 35.h,
@@ -156,7 +114,7 @@ class _HomeDetailPageState extends State<HomeDetailPage> {
                       ),
                     ),
                     IconButton(
-                      onPressed: (){},
+                      onPressed: () {},
                       icon: Icon(
                         Icons.favorite,
                         size: 35.h,
