@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
-class BuyButtonWidget extends StatelessWidget {
+class BigButtonWidget extends StatelessWidget {
   String text;
-   BuyButtonWidget({super.key, required this.text});
+   BigButtonWidget({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

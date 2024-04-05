@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/presentation/core/constants/color_const.dart';
-import 'package:ecommerce_app/presentation/widgets/buy_button_widget.dart';
+import 'package:ecommerce_app/presentation/widgets/big_button_widget.dart';
 import 'package:ecommerce_app/presentation/widgets/product_counter_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -98,7 +98,7 @@ class _CartPageState extends State<CartPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              BuyButtonWidget(text: "Checkout"),
+              BigButtonWidget(text: "Checkout"),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.end,
