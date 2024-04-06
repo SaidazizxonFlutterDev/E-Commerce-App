@@ -19,10 +19,9 @@ class SettingsResources{
     Icons.location_on,
     Icons.chat
   ];
-  static List<String> labels = ["Edit Profile", "Orders", "Delivery Address", "Help"];
+  static List<String> labels = ["Edit Profile", "Delivery Address", "Help"];
   static List<String> routeNames = [
     '/edit_profile',
-    '/orders',
     '/delivery_address',
     '/help'
   ];

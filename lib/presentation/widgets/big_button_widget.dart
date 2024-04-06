@@ -22,7 +22,7 @@ class BigButtonWidget extends StatelessWidget {
           style: TextStyle(
               letterSpacing: 2,
               fontWeight: FontWeight.bold,
-              fontSize: 24.sp,
+              fontSize: 20.sp,
               color: ColorConst.primaryWhite),
         ),
       ),
