@@ -6,7 +6,6 @@ import 'package:ecommerce_app/presentation/screens/search/search_page.dart';
 import 'package:ecommerce_app/presentation/screens/settings/delivery_address/deliver_address_page.dart';
 import 'package:ecommerce_app/presentation/screens/settings/editprofile/edit_profile_page.dart';
 import 'package:ecommerce_app/presentation/screens/settings/help/help_page.dart';
-import 'package:ecommerce_app/presentation/screens/settings/orders/orders_page.dart';
 import 'package:ecommerce_app/presentation/screens/settings/settings_page.dart';
 import 'package:flutter/material.dart';
 
