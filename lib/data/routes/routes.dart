@@ -31,8 +31,6 @@ class MyRoutes {
         return MaterialPageRoute(builder: (context) => const HomeDetailPage());
       case '/edit_profile':
         return MaterialPageRoute(builder: (context) => const EditProfilePage());
-      case '/orders':
-        return MaterialPageRoute(builder: (context) => const OrdersPage());
       case '/delivery_address':
         return MaterialPageRoute(builder: (context) => const DeliveryAddressPage());
       case '/help':
