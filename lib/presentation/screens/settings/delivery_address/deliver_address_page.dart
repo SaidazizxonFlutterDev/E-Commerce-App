@@ -3,9 +3,14 @@ import 'package:ecommerce_app/presentation/widgets/big_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DeliveryAddressPage extends StatelessWidget {
+class DeliveryAddressPage extends StatefulWidget {
   const DeliveryAddressPage({super.key});
 
+  @override
+  State<DeliveryAddressPage> createState() => _DeliveryAddressPageState();
+}
+
+class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,17 +59,12 @@ class DeliveryAddressPage extends StatelessWidget {
                 style: TextStyle(fontSize: 14.sp),
               ),
             ),
-            const SizedBox(
-              width: 400,
-              child:
-                  DropdownMenu(hintText: "Select Region", dropdownMenuEntries: [
-                DropdownMenuEntry(value: "Tashkent", label: "Tashkent"),
-                DropdownMenuEntry(value: "Namangan", label: "Namangan"),
-                DropdownMenuEntry(value: "Andijon", label: "Andijon"),
-                DropdownMenuEntry(value: "Fergana", label: "Fergana"),
-                DropdownMenuEntry(value: "Sirdaryo", label: "Sirdaryo"),
-              ]),
-            ),
+            DropdownButton(
+                isExpanded: true,
+                items: const [DropdownMenuItem(child: Text("data"))],
+                onChanged: (value) {
+                  setState(() {});
+                }),
             Padding(
               padding: EdgeInsets.only(top: 20.h, bottom: 10.h),
               child: Text(
@@ -72,16 +72,12 @@ class DeliveryAddressPage extends StatelessWidget {
                 style: TextStyle(fontSize: 14.sp),
               ),
             ),
-            const SizedBox(
-                width: 400,
-                child:
-                    DropdownMenu(hintText: "Select City", dropdownMenuEntries: [
-                  DropdownMenuEntry(value: "Chust", label: "Chust"),
-                  DropdownMenuEntry(value: "Pop", label: "Pop"),
-                  DropdownMenuEntry(
-                      value: "To'raqo'rg'on", label: "To'raqo'rg'on"),
-                  DropdownMenuEntry(value: "Kosonsoy", label: "Kosonsoy"),
-                ])),
+            DropdownButton(
+              isExpanded: true,
+                items: const [DropdownMenuItem(child: Text("hello"))],
+                onChanged: (value) {
+                  setState(() {});
+                }),
             Center(child: BigButtonWidget(text: "Submit")),
           ],
         ),
