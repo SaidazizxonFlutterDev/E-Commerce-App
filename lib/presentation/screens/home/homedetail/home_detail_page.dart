@@ -1,11 +1,14 @@
+import 'package:ecommerce_app/data/models/allproducts_model.dart';
 import 'package:ecommerce_app/presentation/core/constants/color_const.dart';
 import 'package:ecommerce_app/presentation/widgets/big_button_widget.dart';
 import 'package:ecommerce_app/presentation/widgets/product_counter_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class HomeDetailPage extends StatefulWidget {
-  const HomeDetailPage({super.key});
+  AllProductsModel productsModel;
+  HomeDetailPage({super.key, required this.productsModel});
 
   @override
   State<HomeDetailPage> createState() => _HomeDetailPageState();
@@ -38,7 +41,7 @@ class _HomeDetailPageState extends State<HomeDetailPage> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10.r),
                           child: Image.network(
-                            'https://source.unsplash.com/random',
+                            widget.productsModel.images.last,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -67,7 +70,7 @@ class _HomeDetailPageState extends State<HomeDetailPage> {
                 ),
                 SizedBox(height: 10.h),
                 Text(
-                  "Sitron Sofa",
+                  widget.productsModel.title,
                   style: TextStyle(
                       color: ColorConst.primaryBlack,
                       fontSize: 22.sp,
@@ -75,7 +78,7 @@ class _HomeDetailPageState extends State<HomeDetailPage> {
                 ),
                 // SizedBox(height: 5.h),
                 Text(
-                  "\$510",
+                  "\$ ${widget.productsModel.price.toString()}",
                   style: TextStyle(
                       color: ColorConst.primaryBlue,
                       fontSize: 22.sp,
@@ -96,7 +99,7 @@ class _HomeDetailPageState extends State<HomeDetailPage> {
                 ),
                 SizedBox(height: 8.h),
                 Text(
-                  "Step out in style with this sleek navy blue baseball cap. Crafted from durable material, it features a smooth, structured design and an adjustable strap for the perfect fit. Protect your eyes from the sun and complement your casual looks with this versatile and timeless accessory.",
+                  widget.productsModel.description,
                   style:
                       TextStyle(fontSize: 16.sp, color: ColorConst.secDarkGrey),
                 ),

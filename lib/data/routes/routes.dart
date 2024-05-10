@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/data/models/allproducts_model.dart';
 import 'package:ecommerce_app/presentation/screens/bottomnavbar/navigation_bar.dart';
 import 'package:ecommerce_app/presentation/screens/favorites/favorites_page.dart';
 import 'package:ecommerce_app/presentation/screens/home/home_page.dart';
@@ -27,11 +28,15 @@ class MyRoutes {
       case '/settings_page':
         return MaterialPageRoute(builder: (context) => const SettingsPage());
       case '/homedetail':
-        return MaterialPageRoute(builder: (context) => const HomeDetailPage());
+        return MaterialPageRoute(
+            builder: (context) => HomeDetailPage(
+                  productsModel: args as AllProductsModel,
+                ));
       case '/edit_profile':
         return MaterialPageRoute(builder: (context) => const EditProfilePage());
       case '/delivery_address':
-        return MaterialPageRoute(builder: (context) => const DeliveryAddressPage());
+        return MaterialPageRoute(
+            builder: (context) => const DeliveryAddressPage());
       case '/help':
         return MaterialPageRoute(builder: (context) => const HelpPage());
       default:
